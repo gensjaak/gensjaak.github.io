@@ -1,103 +1,431 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
+import { CircleArrowUpRightIcon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import Link from "next/link";
+import { TProject } from "../constants/types";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const projects: TProject[] = [
+    {
+      duration: "From 2022 to Present. 3 years experience",
+      position: "Senior Full Stack Developer",
+      description:
+        "Led significant migrations to React SPA, Nx monorepo, and ViteJS, while implementing features like dark mode, AI chat support, and 2FA, focusing on accessibility and error tracking.",
+      technologies: [
+        {
+          icon: "php",
+          name: "PHP",
+        },
+        {
+          icon: "react",
+          name: "ReactJS",
+        },
+        {
+          icon: "typescript",
+          name: "TypeScript",
+        },
+        {
+          icon: "vitejs",
+          name: "ViteJS",
+        },
+        {
+          icon: "docker",
+          name: "Docker",
+        },
+      ],
+      image: {
+        src: "/images/projects/mailjet.webp",
+        alt: "Mailjet App",
+      },
+      identity: {
+        title: "Mailjet, by SINCH",
+        description:
+          "an email service provider that helps businesses send marketing and transactional emails. It offers tools for designing emails, managing contacts, and tracking performance, with both a user-friendly interface and developer-friendly APIs.",
+        link: {
+          href: "https://mailjet.com",
+          text: "Visit Mailjet",
+        },
+      },
+    },
+    {
+      duration: "From 2020 to 2021. 2 years experience",
+      position: "Frontend ReactJS Developer",
+      description:
+        "Developed ReactJS components for an iPad-based cash register software, designed an accounting module, contributed to an open-source ReScript library, and managed customer relationships.",
+      technologies: [
+        { icon: "react", name: "ReScript" },
+        { icon: "ocaml", name: "OCaml" },
+        { icon: "googlecloud", name: "Google Cloud" },
+      ],
+      image: {
+        src: "/images/projects/wino.webp",
+        alt: "Wino",
+      },
+      identity: {
+        title: "Wino",
+        description:
+          "an iPad-based, all-in-one point-of-sale software for wine merchants, grocery, and cheese shops. It centralizes sales, stock, accounting, and offers e-commerce integration, customer loyalty, and hardware support.",
+        link: { href: "https://wino.fr", text: "Try it out" },
+      },
+    },
+    {
+      duration: "From 2019 to 2020. 1 year experience",
+      position: "Frontend VueJS/NuxtJS Developer",
+      description:
+        "Developed the front-end with VueJS/NuxtJS, designing with Adobe XD, and implemented a process for validating and signing accounting documents.",
+      technologies: [
+        { icon: "vuejs", name: "VueJS" },
+        { icon: "nuxtjs", name: "NuxtJS" },
+        { icon: "xd", name: "Adobe XD" },
+      ],
+      image: {
+        src: "/images/projects/talenz.webp",
+        alt: "Talenz Groupe Fidorg",
+      },
+      identity: {
+        title: "Talenz Groupe Fidorg",
+        description:
+          "A national network of 7 proximity-based cabinets in France, offering traditional consulting services like accounting and auditing, plus innovative business management solutions. They prioritize client success, agility, sustainability, and community involvement.",
+        link: { href: "https://www.talenz.fr/", text: "Visit Talenz" },
+      },
+    },
+    {
+      duration: "During 2017",
+      position: "Frontend JavaScript Developer",
+      description:
+        "Developed a JavaScript tool to answer company questions, working on a project for the manufacturer of construction machinery, machine tools, and aeronautical equipment.",
+      technologies: [
+        { icon: "javascript", name: "JavaScript" },
+        { icon: "html5", name: "HTML5" },
+        { icon: "css3", name: "CSS3" },
+      ],
+      image: {
+        src: "/images/projects/liebherr.webp",
+        alt: "Liebherr",
+      },
+      identity: {
+        title: "Liebherr",
+        description:
+          "a global, family-run company operating for over 75 years. It offers a wide range of sophisticated products and services across various segments like construction machinery, mining, maritime cranes, aerospace, and refrigeration, with over 150 companies worldwide.",
+        link: { href: "https://www.liebherr.com", text: "Visit Liebherr" },
+      },
+    },
+    {
+      duration: "During 2017",
+      position: "WordPress Developer",
+      description:
+        "Developed and maintained the showcase site using WordPress for the French skincare and hygiene products brand.",
+      technologies: [
+        { icon: "wordpress", name: "WordPress" },
+        { icon: "php", name: "PHP" },
+        { icon: "html5", name: "HTML5" },
+        { icon: "css3", name: "CSS3" },
+      ],
+      image: {
+        src: "/images/projects/ushuaia-beaute.webp",
+        alt: "Ushuaia Beauté",
+      },
+      identity: {
+        title: "Ushuaia Beauté",
+        description:
+          "Ushuaia Beauté offers a range of beauty products including deodorants, shower gels, and organic items. The brand emphasizes its long-standing commitment to nature, providing beauty secrets and ingredient information.",
+        link: {
+          href: "https://www.ushuaia-beaute.fr/",
+          text: "Visit Ushuaia Beauté",
+        },
+      },
+    },
+    {
+      duration: "During 2017",
+      position: "Frontend VueJS Developer",
+      description:
+        "Developed and maintained the website and order funnel using VueJS for the Japanese food restaurants.",
+      technologies: [
+        { icon: "vuejs", name: "VueJS" },
+        { icon: "laravel", name: "Laravel" },
+        { icon: "html5", name: "HTML5" },
+        { icon: "css3", name: "CSS3" },
+      ],
+      image: {
+        src: "/images/projects/yokosushi.webp",
+        alt: "Yokosushi",
+      },
+      identity: {
+        title: "Yokosushi",
+        description:
+          "offers Japanese dining in Toulouse with two locations. They provide delivery or pick-up services, featuring a diverse menu. Additionally, the brand offers franchising opportunities for those interested in joining their network.",
+        link: { href: "https://www.yokosushi.fr/", text: "Order some sushi" },
+      },
+    },
+    {
+      duration: "During 2024",
+      position: "WordPress Developer",
+      description:
+        'I developed and maintained the website for the recipients of the "Game of Life" book distribution during the 2024 Paris Olympics.',
+      technologies: [
+        { icon: "wordpress", name: "WordPress" },
+        { icon: "php", name: "PHP" },
+        { icon: "html5", name: "HTML5" },
+        { icon: "css3", name: "CSS3" },
+      ],
+      image: {
+        src: "/images/projects/goal.webp",
+        alt: "Game Of Life",
+      },
+      identity: {
+        title: "Game Of Life",
+        description:
+          'The "Game of Life" website shares a Christian message of God\'s love and victory through Jesus Christ. It offers a book, "Le jeu de la vie," guiding users to overcome challenges by embracing faith, and outlines outreach plans for the Paris Olympics.',
+        link: { href: "https://game-of-life.org/", text: "Get your copy" },
+      },
+    },
+    {
+      duration: "Since 2023",
+      position: "WordPress Developer",
+      description:
+        "I developed and maintained the website for the French association of young christians.",
+      technologies: [
+        { icon: "wordpress", name: "WordPress" },
+        { icon: "php", name: "PHP" },
+        { icon: "html5", name: "HTML5" },
+        { icon: "css3", name: "CSS3" },
+      ],
+      image: {
+        src: "/images/projects/jev.webp",
+        alt: "Jeunesse et vie",
+      },
+      identity: {
+        title: "Jeunesse et vie",
+        description:
+          "a Christian youth movement passionate about Jesus Christ. They introduce young people to Jesus through Bible studies, concerts, and conferences, fostering spiritual growth and community through teachings, retreats, and social activities across France and internationally.",
+        link: {
+          href: "https://jeunesse-et-vie.fr/",
+          text: "Visit Jeunesse et Vie",
+        },
+      },
+    },
+    {
+      duration: "During 2024",
+      position: "WordPress Developer",
+      description:
+        "I developed and maintained the website for Professor of Organic Chemistry and Christian author Zacharias Tanee Fomum.",
+      technologies: [
+        { icon: "wordpress", name: "WordPress" },
+        { icon: "php", name: "PHP" },
+        { icon: "html5", name: "HTML5" },
+        { icon: "css3", name: "CSS3" },
+      ],
+      image: {
+        src: "/images/projects/ztf.webp",
+        alt: "Zacharias Tanee Fomum",
+      },
+      identity: {
+        title: "Zacharias Tanee Fomum",
+        description:
+          "dedicated to Zacharias Tanee Fomum, a distinguished author, scientist, and spiritual leader. It features his prolific Christian writings, academic achievements in Organic Chemistry, and role as an apostle of a global missionary movement.",
+        link: {
+          href: "https://ztfomum.org/",
+          text: "Visit ZTFomum",
+        },
+      },
+    },
+    {
+      duration: "During 2024",
+      position: "WordPress Developer",
+      description:
+        "I developed and maintained the website for the Christian Missionary Fellowship International - Church of Paris.",
+      technologies: [
+        { icon: "wordpress", name: "WordPress" },
+        { icon: "php", name: "PHP" },
+        { icon: "html5", name: "HTML5" },
+        { icon: "css3", name: "CSS3" },
+      ],
+      image: {
+        src: "/images/projects/cmci-paris.webp",
+        alt: "CMCI Paris",
+      },
+      identity: {
+        title: "CMCI Paris",
+        description:
+          'a community of Jesus Christ\'s disciples aiming to raise 1 billion disciples globally. They offer resources like "Le jeu de la vie" and host events, striving to make Christ known worldwide through their missionary movement.',
+        link: {
+          href: "https://cmciparis.fr/",
+          text: "Visit CMCI Paris",
+        },
+      },
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <>
+      <section className="hero">
+        <div className="avatar-wrapper">
+          <img src="/images/avatar.png" alt="Avatar" className="avatar" />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <h6 className="greetings">Hi, I&apos;m Jean Jacques 👋</h6>
+        <h1 className="headline">
+          <span>Building digital</span>
+          <span>products, brands and</span>
+          <span>experiences.</span>
+        </h1>
+        <p className="description">
+          As a senior front-end developer with over seven years&apos;
+          experience, specialising in React, VueJS and TypeScript, I enjoy
+          creating high-performance, intuitive interfaces, while working with
+          the product and design teams.
+        </p>
+        <Link href="/contact" className="cta">
+          Connect with me
+          <span className="ml-2">📬</span>
+        </Link>
+      </section>
+
+      <section className="clients">
+        <ul className="clients-list">
+          <li className="client-item">
+            <img
+              src="/images/clients/attineos.svg"
+              alt="Attineos"
+              className="client-logo w-[150px]"
+            />
+          </li>
+          <li className="client-item">
+            <img
+              src="/images/clients/mailjet.svg"
+              alt="Mailjet"
+              className="client-logo w-[120px]"
+            />
+          </li>
+          <li className="client-item">
+            <img
+              src="/images/clients/wino.svg"
+              alt="Wino"
+              className="client-logo w-[100px]"
+            />
+          </li>
+          <li className="client-item">
+            <img
+              src="/images/clients/talenz.svg"
+              alt="Talenz"
+              className="client-logo w-[100px]"
+            />
+          </li>
+          <li className="client-item">
+            <img
+              src="/images/clients/liebherr.svg"
+              alt="Liebherr"
+              className="client-logo w-[120px]"
+            />
+          </li>
+          <li className="client-item">
+            <img
+              src="/images/clients/ushuaia.png"
+              alt="Ushuaia Beauté"
+              className="client-logo w-[85px]"
+            />
+          </li>
+          <li className="client-item">
+            <span className="client-logo">YokoSushi</span>
+          </li>
+          <li className="client-item">
+            <img
+              src="/images/clients/goal.png"
+              alt="Game of Life"
+              className="client-logo w-[90px]"
+            />
+          </li>
+          <li className="client-item">
+            <img
+              src="/images/clients/jev.png"
+              alt="Jeunesse et vie"
+              className="client-logo w-[80px]"
+            />
+          </li>
+          <li className="client-item">
+            <img
+              src="/images/clients/ztf.png"
+              alt="Zacharias Tanee Fomum"
+              className="client-logo w-[90px]"
+            />
+          </li>
+          <li className="client-item">
+            <img
+              src="/images/clients/cmci-paris.png"
+              alt="CMCI Paris"
+              className="client-logo w-[100px]"
+            />
+          </li>
+        </ul>
+      </section>
+
+      <section className="projects">
+        <ul className="projects-list">
+          {projects.map((project, index) => (
+            <li key={index} className="project-item">
+              <article className="project-card">
+                <div className="project-card-info">
+                  <div className="project-card-info-personal">
+                    <span className="project-card-info-duration">
+                      {project.duration}
+                    </span>
+                    <h2 className="project-card-info-position">
+                      {project.position}
+                    </h2>
+                    <p className="project-card-info-description">
+                      {project.description}
+                    </p>
+                  </div>
+
+                  <div className="project-card-info-skills">
+                    <ul className="project-card-info-technologies">
+                      {project.technologies.map((tech, i) => (
+                        <li key={i} className="project-card-info-technology">
+                          <i
+                            className={`devicon-${tech.icon}-plain project-card-info-technology-icon`}
+                          ></i>
+                          <span className="project-card-info-technology-name">
+                            {tech.name}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="project-card-identity">
+                  <div className="project-card-image-wrapper">
+                    <img
+                      src={project.image.src}
+                      alt={project.image.alt}
+                      className="project-card-image"
+                    />
+                  </div>
+                  <div className="project-card-identity-info">
+                    <h6 className="project-card-identity-title">
+                      {project.identity.title}
+                    </h6>
+                    <p className="project-card-identity-description">
+                      {project.identity.description}
+                    </p>
+                    <a
+                      href={project.identity.link.href}
+                      className="project-card-identity-link"
+                    >
+                      <span className="project-card-identity-link-text">
+                        {project.identity.link.text}
+                      </span>
+                      <HugeiconsIcon
+                        icon={CircleArrowUpRightIcon}
+                        size={22}
+                        strokeWidth={2}
+                      />
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </>
   );
 }

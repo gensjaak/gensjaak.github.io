@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { MailOpenIcon } from "@hugeicons/core-free-icons";
+import Link from "next/link";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const bricolageGrotesque = Bricolage_Grotesque({
+  variable: "--font-bricolage-grotesque",
   subsets: ["latin"],
 });
 
@@ -24,10 +22,41 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${bricolageGrotesque.variable} antialiased`}>
+        <header className="header">
+          <Link href="/" className="logo">
+            <span className="logo-icon-wrapper">
+              <HugeiconsIcon icon={MailOpenIcon} size={22} strokeWidth={1.5} />
+            </span>
+            <span className="logo-text">hi@jeanjacques.dev</span>
+          </Link>
+
+          <nav className="navigation">
+            <ul className="navigation-list">
+              <li className="navigation-list-item">
+                <Link className="navigation-link" href="/">
+                  Works
+                </Link>
+              </li>
+              <li className="navigation-list-item">
+                <Link className="navigation-link" href="/">
+                  Resume
+                </Link>
+              </li>
+              <li className="navigation-list-item">
+                <Link className="navigation-link" href="/">
+                  Services
+                </Link>
+              </li>
+              <li className="navigation-list-item">
+                <Link className="navigation-link" href="/">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <main>{children}</main>
       </body>
     </html>
   );
