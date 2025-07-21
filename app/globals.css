@@ -324,3 +324,41 @@ body {
     @apply mt-4;
   }
 }
+
+.with-ai {
+  @apply relative overflow-hidden min-h-screen flex flex-col justify-center items-center bg-white text-black grayscale;
+
+  background-repeat: no-repeat;
+  background-image: url("/images/with-ai.png");
+  background-position: center right 20%;
+  background-size: 40%;
+
+  &:before {
+    content: "";
+    @apply absolute z-0 top-0 left-0 w-full;
+
+    box-shadow: 0 0 100px 150px white;
+  }
+  &:after {
+    content: "";
+    @apply absolute z-0 bottom-0 left-0 w-full;
+
+    box-shadow: 0 0 50px 100px white;
+  }
+  .with-ai-content {
+    @apply flex relative flex-col gap-5 w-[70%] mx-auto py-10;
+  }
+  .with-ai-title {
+    @apply flex flex-col text-5xl font-black leading-[1.1] tracking-[-0.05em];
+
+    span {
+      @apply inline-flex items-center gap-2;
+    }
+  }
+  .with-ai-description {
+    @apply text-xl flex flex-col mb-5;
+  }
+  .with-ai-button {
+    @apply inline-flex justify-center items-center w-fit gap-2 text-xl font-semibold tracking-[-0.05em] bg-black text-white px-6 py-3 rounded-full;
+  }
+}

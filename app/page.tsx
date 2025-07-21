@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import {
+  AiBeautifyIcon,
   CircleArrowUpRightIcon,
   Sent02Icon,
 } from "@hugeicons/core-free-icons";
@@ -511,6 +512,33 @@ export default function Home() {
               <i className="devicon-javascript-plain"></i>
             </div>
             <span className="skill-item-text">Typescript, Javascript</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="with-ai">
+        <div className="container mx-auto">
+          <div className="with-ai-content">
+            <h2 className="with-ai-title">
+              <span>Transform</span>
+              <span>your ideas into reality</span>
+              <span>
+                with AI{" "}
+                <HugeiconsIcon
+                  icon={AiBeautifyIcon}
+                  size={42}
+                  strokeWidth={1.5}
+                />
+              </span>
+            </h2>
+            <p className="with-ai-description">
+              <span>Ready to take your projects to the next level?</span>
+              <span>Discover the power of Artificial Intelligence</span>
+              <span>and build innovative solutions with ease.</span>
+              <span>Focus on your creativity and passion</span>
+              <span>while AI handles the heavy lifting.</span>
+            </p>
+            <button className="with-ai-button">I have an idea</button>
           </div>
         </div>
       </section>
