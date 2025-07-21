@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { MailOpenIcon } from "@hugeicons/core-free-icons";
+import { AiBeautifyIcon, MailOpenIcon } from "@hugeicons/core-free-icons";
 import Link from "next/link";
 
 const bricolageGrotesque = Bricolage_Grotesque({
@@ -40,17 +40,18 @@ export default function RootLayout({
               </li>
               <li className="navigation-list-item">
                 <Link className="navigation-link" href="/">
-                  Resume
-                </Link>
-              </li>
-              <li className="navigation-list-item">
-                <Link className="navigation-link" href="/">
-                  Services
+                  Expertises
                 </Link>
               </li>
               <li className="navigation-list-item">
                 <Link className="navigation-link" href="/">
                   Contact
+                </Link>
+              </li>
+              <li className="navigation-list-item">
+                <Link className="navigation-link build-with-ai" href="/">
+                  <HugeiconsIcon icon={AiBeautifyIcon} size={22} strokeWidth={1.5} />
+                  Let&apos;s build with AI
                 </Link>
               </li>
             </ul>

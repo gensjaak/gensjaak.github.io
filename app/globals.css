@@ -44,13 +44,16 @@ body {
     @apply flex flex-row gap-12;
   }
   .navigation-list-item {
-    @apply mx-2;
+    @apply flex justify-center items-center mx-2;
   }
   .navigation-link {
-    @apply font-medium text-gray-800;
+    @apply inline-flex gap-2 font-medium text-gray-800;
 
     &:hover {
       @apply text-black;
+    }
+    &.build-with-ai {
+      @apply font-semibold tracking-[-0.05em] bg-indigo-500 text-white px-6 py-3 rounded-full;
     }
   }
 }
@@ -171,5 +174,148 @@ body {
     .project-card-identity-link-text {
       @apply font-semibold;
     }
+  }
+}
+
+.skills {
+  @apply px-16 min-h-screen flex justify-center items-center;
+
+  .skills-grid {
+    .skill-item {
+      @apply relative overflow-hidden rounded-4xl p-8 flex flex-col items-start justify-end;
+    }
+    .skill-item-icons {
+      @apply flex flex-row gap-6;
+    }
+    .skill-item-icons i {
+      @apply text-4xl;
+    }
+    .skill-item-text {
+      @apply font-bold text-lg mt-3 tracking-[-0.05em];
+    }
+
+    .skill-item::before {
+      content: "";
+      @apply absolute z-10 top-0 left-0 w-full h-full;
+      background-repeat: no-repeat;
+      opacity: 0.25;
+    }
+    .skill-item:nth-child(1)::before {
+      background-image: url("/images/brushes/1.svg");
+      background-position: top left 10%;
+      background-size: 350%;
+    }
+    .skill-item:nth-child(2)::before {
+      background-image: url("/images/brushes/2.svg");
+      background-position: center;
+      background-size: 300%;
+      opacity: 0.15;
+    }
+    .skill-item:nth-child(3)::before {
+      background-image: url("/images/brushes/3.svg");
+      background-position: center;
+      background-size: 100%;
+      opacity: 0.15;
+    }
+    .skill-item:nth-child(4)::before {
+      background-image: url("/images/brushes/4.svg");
+      background-position: center;
+      background-size: 200%;
+      opacity: 0.15;
+    }
+    .skill-item:nth-child(5)::before {
+      background-image: url("/images/brushes/5.svg");
+      background-position: center;
+      background-size: 250%;
+      opacity: 0.05;
+    }
+    .skill-item:nth-child(6)::before {
+      background-image: url("/images/brushes/6.svg");
+      background-position: center;
+      background-size: 250%;
+      opacity: 0.1;
+    }
+    .skill-item:nth-child(7)::before {
+      background-image: url("/images/brushes/7.svg");
+      background-position: center;
+      background-size: 250%;
+      opacity: 0.15;
+    }
+    .skill-item:nth-child(8)::before {
+      background-image: url("/images/brushes/8.svg");
+      background-position: center;
+      background-size: 250%;
+      opacity: 0.15;
+    }
+    .skill-item:nth-child(9)::before {
+      background-image: url("/images/brushes/9.svg");
+      background-position: center;
+      background-size: 250%;
+      opacity: 0.15;
+    }
+    .skill-item:nth-child(10)::before {
+      background-image: url("/images/brushes/10.svg");
+      background-position: top left;
+      background-size: 500%;
+      opacity: 0.15;
+    }
+  }
+}
+
+.contact {
+  @apply min-h-screen flex flex-col justify-center items-center;
+
+  .contact-content {
+    @apply flex flex-row gap-16;
+  }
+  .contact-content-left,
+  .contact-form {
+    @apply flex-1/2;
+  }
+  .contact-content-left {
+    @apply rounded-4xl overflow-hidden flex flex-col items-end justify-end p-10 pt-16;
+
+    background-image: url("/images/background.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .contact-content-left-icon {
+    @apply rounded-full bg-blue-100 w-[175px] h-[175px] overflow-hidden flex items-center justify-center mb-5 mt-28;
+
+    .contact-content-left-image {
+      @apply w-full h-full object-cover;
+    }
+  }
+  .contact-content-left-title {
+    @apply inline-flex flex-col text-5xl text-right font-black leading-[1.1] tracking-[-0.05em] mb-3;
+  }
+  .contact-content-left-description {
+    @apply inline-flex flex-col text-xl w-[700px] text-right;
+  }
+  .contact-socials {
+    @apply flex flex-row gap-3 mt-10;
+  }
+  .contact-social-item {
+    @apply bg-blue-100 rounded-full w-[50px] h-[50px] overflow-hidden flex items-center justify-center;
+  }
+
+  .contact-form {
+    @apply flex flex-col justify-center gap-5;
+  }
+  .contact-form-label {
+    @apply flex flex-col w-[60%];
+    @apply font-semibold;
+
+    span {
+      @apply relative left-4;
+    }
+  }
+  .contact-form-input {
+    @apply rounded-2xl border border-gray-200 p-4;
+  }
+  .contact-form-button {
+    @apply flex gap-2 items-center justify-center self-start text-xl font-semibold tracking-[-0.05em] bg-black text-white px-6 py-3 rounded-full;
+    @apply mt-4;
   }
 }

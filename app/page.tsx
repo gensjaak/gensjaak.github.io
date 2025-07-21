@@ -1,6 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import { CircleArrowUpRightIcon } from "@hugeicons/core-free-icons";
+import {
+  CircleArrowUpRightIcon,
+  Sent02Icon,
+} from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import { AiBrain03Icon } from "@hugeicons/core-free-icons";
 import Link from "next/link";
 import { TProject } from "../constants/types";
 
@@ -262,7 +266,7 @@ export default function Home() {
         <div className="avatar-wrapper">
           <img src="/images/avatar.png" alt="Avatar" className="avatar" />
         </div>
-        <h6 className="greetings">Hi, I&apos;m Jean Jacques 👋</h6>
+        <h6 className="greetings">Hi, I&apos;m Jean-Jacques 👋</h6>
         <h1 className="headline">
           <span>Building digital</span>
           <span>products, brands and</span>
@@ -425,6 +429,181 @@ export default function Home() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section className="skills">
+        <div className="grid grid-cols-2 grid-rows-2 gap-8 skills-grid">
+          <div className="skill-item bg-red-400 col-span-2 row-span-4">
+            <div className="skill-item-icons">
+              <i className="devicon-react-original"></i>
+              <i className="devicon-redux-original"></i>
+              <i className="devicon-ocaml-plain"></i>
+            </div>
+            <span className="skill-item-text">ReactJS, ReScript, OCaml</span>
+          </div>
+          <div className="skill-item bg-pink-300 col-start-1 row-start-5">
+            <div className="skill-item-icons">
+              <i className="devicon-express-original"></i>
+              <i className="devicon-graphql-plain"></i>
+            </div>
+            <span className="skill-item-text">REST API, GraphQL</span>
+          </div>
+          <div className="skill-item bg-green-400 col-span-2 col-start-2 row-start-5">
+            <div className="skill-item-icons">
+              <i className="devicon-docker-plain"></i>
+              <i className="devicon-githubactions-plain"></i>
+              <i className="devicon-jest-plain"></i>
+            </div>
+            <span className="skill-item-text">
+              Docker, Github Actions, Jest
+            </span>
+          </div>
+          <div className="skill-item bg-violet-300 row-span-2 col-start-3 row-start-1">
+            <div className="skill-item-icons">
+              <i className="devicon-php-plain"></i>
+              <i className="devicon-zend-plain"></i>
+              <i className="devicon-wordpress-plain"></i>
+            </div>
+            <span className="skill-item-text">
+              PHP, Zend Framework, WordPress
+            </span>
+          </div>
+          <div className="skill-item bg-teal-500 col-span-2 col-start-3 row-start-3">
+            <div className="skill-item-icons">
+              <i className="devicon-vuejs-plain"></i>
+              <i className="devicon-nuxtjs-plain"></i>
+            </div>
+            <span className="skill-item-text">VueJS, NuxtJS</span>
+          </div>
+          <div className="skill-item bg-amber-400 col-start-3 row-start-4">
+            <div className="skill-item-icons">
+              <i className="devicon-sentry-plain"></i>
+            </div>
+            <span className="skill-item-text">Sentry, Zod, ReactQuery, Nx</span>
+          </div>
+          <div className="skill-item bg-orange-400 row-span-2 col-start-4 row-start-4">
+            <div className="skill-item-icons">
+              <i className="devicon-nodejs-plain"></i>
+              <i className="devicon-nextjs-plain"></i>
+              <i className="devicon-prisma-original"></i>
+            </div>
+            <span className="skill-item-text">NodeJS, NextJS, Prisma</span>
+          </div>
+          <div className="skill-item bg-fuchsia-300 col-span-2 col-start-4 row-start-1">
+            <div className="skill-item-icons">
+              <i className="devicon-figma-plain"></i>
+              <i className="devicon-storybook-plain"></i>
+              <i className="devicon-tailwindcss-plain"></i>
+            </div>
+            <span className="skill-item-text">
+              UX/UI Design, Storybook, TailwindCSS
+            </span>
+          </div>
+          <div className="skill-item bg-orange-300 col-start-4 row-start-2">
+            <div className="skill-item-icons">
+              <HugeiconsIcon icon={AiBrain03Icon} size={38} strokeWidth={1.5} />
+            </div>
+            <span className="skill-item-text">OpenAI, Ollama, RAG</span>
+          </div>
+          <div className="skill-item bg-blue-300 row-span-4 col-start-5 row-start-2">
+            <div className="skill-item-icons">
+              <i className="devicon-typescript-plain"></i>
+              <i className="devicon-javascript-plain"></i>
+            </div>
+            <span className="skill-item-text">Typescript, Javascript</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="contact">
+        <div className="container mx-auto">
+          <div className="contact-content">
+            <div className="contact-content-left">
+              <span className="contact-content-left-icon">
+                <img
+                  src="/images/contact.png"
+                  alt="Contact"
+                  className="contact-content-left-image"
+                />
+              </span>
+              <h2 className="contact-content-left-title">
+                <span>Have a project or</span>
+                <span>a question?</span>
+              </h2>
+              <p className="contact-content-left-description">
+                <span>Let&apos;s get in touch, talk about it and</span>
+                <span>let&apos;s make something happen!</span>
+              </p>
+              <ul className="contact-socials">
+                <li className="contact-social-item">
+                  <a
+                    href="mailto:hi@jeanjacques.dev"
+                    className="contact-social-link"
+                  >
+                    <img
+                      src="/images/socials/at.svg"
+                      alt="Email"
+                      className="contact-social-icon"
+                      width={22}
+                      height={22}
+                    />
+                  </a>
+                </li>
+                <li className="contact-social-item">
+                  <a
+                    href="https://www.linkedin.com/in/jeanjacques-akakpo/"
+                    className="contact-social-link"
+                  >
+                    <img
+                      src="/images/socials/linkedin.svg"
+                      alt="Linkedin"
+                      className="contact-social-icon"
+                      width={22}
+                      height={22}
+                    />
+                  </a>
+                </li>
+                <li className="contact-social-item">
+                  <a
+                    href="https://github.com/gensjaak"
+                    className="contact-social-link"
+                  >
+                    <img
+                      src="/images/socials/github.svg"
+                      alt="Github"
+                      className="contact-social-icon"
+                      width={22}
+                      height={22}
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <form className="contact-form">
+              <label htmlFor="name" className="contact-form-label">
+                <span>Name</span>
+                <input type="text" id="name" className="contact-form-input" />
+              </label>
+              <label htmlFor="email" className="contact-form-label">
+                <span>Email</span>
+                <input type="email" id="email" className="contact-form-input" />
+              </label>
+              <label htmlFor="message" className="contact-form-label">
+                <span>Message</span>
+                <textarea
+                  id="message"
+                  className="contact-form-input"
+                  rows={7}
+                />
+              </label>
+              <button type="submit" className="contact-form-button">
+                Send message{" "}
+                <HugeiconsIcon icon={Sent02Icon} size={22} strokeWidth={2} />
+              </button>
+            </form>
+          </div>
+        </div>
       </section>
     </>
   );
