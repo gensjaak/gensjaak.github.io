@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -21,55 +22,61 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${bricolageGrotesque.variable} antialiased`}>
-        <header className="header">
-          <Link href="/" className="logo">
-            <span className="logo-icon-wrapper">
-              <HugeiconsIcon icon={MailOpenIcon} size={22} strokeWidth={1.5} />
-            </span>
-            <span className="logo-text">hi@jeanjacques.dev</span>
-          </Link>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <header className="header">
+            <Link href="/" className="logo">
+              <span className="logo-icon-wrapper">
+                <HugeiconsIcon
+                  icon={MailOpenIcon}
+                  size={22}
+                  strokeWidth={1.5}
+                />
+              </span>
+              <span className="logo-text">hi@jeanjacques.dev</span>
+            </Link>
 
-          <nav className="navigation">
-            <ul className="navigation-list">
-              <li className="navigation-list-item">
-                <Link className="navigation-link" href="/">
-                  Works
-                </Link>
-              </li>
-              <li className="navigation-list-item">
-                <Link className="navigation-link" href="/">
-                  Expertises
-                </Link>
-              </li>
-              <li className="navigation-list-item">
-                <Link className="navigation-link" href="/">
-                  Contact
-                </Link>
-              </li>
-              <li className="navigation-list-item">
-                <Link className="navigation-link build-with-ai" href="/">
-                  <HugeiconsIcon
-                    icon={AiBeautifyIcon}
-                    size={22}
-                    strokeWidth={1.5}
-                  />
-                  Let&apos;s build with AI
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
-        <main>{children}</main>
-        <footer className="footer">
-          <div className="footer-content">
-            <span className="footer-text">
-              &copy; {new Date().getFullYear()} Jean-Jacques. All rights
-              reserved.
-            </span>
-          </div>
-        </footer>
+            <nav className="navigation">
+              <ul className="navigation-list">
+                <li className="navigation-list-item">
+                  <Link className="navigation-link" href="/">
+                    Works
+                  </Link>
+                </li>
+                <li className="navigation-list-item">
+                  <Link className="navigation-link" href="/">
+                    Expertises
+                  </Link>
+                </li>
+                <li className="navigation-list-item">
+                  <Link className="navigation-link" href="/">
+                    Contact
+                  </Link>
+                </li>
+                <li className="navigation-list-item">
+                  <Link className="navigation-link build-with-ai" href="/">
+                    <HugeiconsIcon
+                      icon={AiBeautifyIcon}
+                      size={22}
+                      strokeWidth={1.5}
+                    />
+                    Let&apos;s build with AI
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          <main>{children}</main>
+          <footer className="footer">
+            <div className="footer-content">
+              <span className="footer-text">
+                &copy; {new Date().getFullYear()} Jean-Jacques Akakpo. All rights
+                reserved.
+              </span>
+            </div>
+          </footer>
+        </ThemeProvider>
       </body>
     </html>
   );
