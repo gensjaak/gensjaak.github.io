@@ -331,7 +331,7 @@ body {
   background-repeat: no-repeat;
   background-image: url("/images/with-ai.png");
   background-position: center right 20%;
-  background-size: 40%;
+  background-size: contain;
 
   &:before {
     content: "";
