@@ -50,7 +50,11 @@ export default function RootLayout({
               </li>
               <li className="navigation-list-item">
                 <Link className="navigation-link build-with-ai" href="/">
-                  <HugeiconsIcon icon={AiBeautifyIcon} size={22} strokeWidth={1.5} />
+                  <HugeiconsIcon
+                    icon={AiBeautifyIcon}
+                    size={22}
+                    strokeWidth={1.5}
+                  />
                   Let&apos;s build with AI
                 </Link>
               </li>
@@ -58,6 +62,14 @@ export default function RootLayout({
           </nav>
         </header>
         <main>{children}</main>
+        <footer className="footer">
+          <div className="footer-content">
+            <span className="footer-text">
+              &copy; {new Date().getFullYear()} Jean-Jacques. All rights
+              reserved.
+            </span>
+          </div>
+        </footer>
       </body>
     </html>
   );
