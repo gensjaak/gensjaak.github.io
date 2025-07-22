@@ -31,44 +31,45 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Bricolage Grotesque", Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 .header {
-  @apply flex justify-between py-10 container mx-auto items-center;
+  @apply flex justify-between py-6 px-4 md:py-10 container mx-auto items-center flex-wrap;
 
   .logo {
-    @apply flex flex-row gap-4 items-center;
+    @apply flex flex-row gap-2 md:gap-4 items-center;
   }
   .logo-icon-wrapper {
-    @apply rounded-full p-3 ring-1 ring-gray-200;
+    @apply rounded-full p-2 md:p-3 ring-1 ring-gray-200;
   }
   .logo-text {
-    @apply font-semibold;
+    @apply font-semibold text-sm md:text-base;
   }
   .navigation {
-    @apply flex flex-row gap-4;
+    @apply flex flex-row gap-2 md:gap-4 mt-4 w-full md:w-auto md:mt-0;
   }
   .navigation-list {
-    @apply flex flex-row gap-12;
+    @apply flex flex-row flex-wrap gap-4 md:gap-8 lg:gap-12 w-full justify-center md:justify-end;
   }
   .navigation-list-item {
-    @apply flex justify-center items-center mx-2;
+    @apply flex justify-center items-center;
   }
   .navigation-link {
-    @apply inline-flex gap-2 font-medium;
+    @apply inline-flex gap-2 font-medium text-sm md:text-base;
 
     &.build-with-ai {
-      @apply font-semibold tracking-[-0.05em] bg-[var(--accent)] text-[var(--background)] px-6 py-3 rounded-full;
+      @apply font-semibold tracking-[-0.05em] bg-[var(--accent)] text-[var(--background)] px-4 py-2 md:px-6 md:py-3 rounded-full;
     }
   }
 }
 
 .hero {
   @apply flex flex-col items-center justify-center container mx-auto;
-  @apply py-10 gap-8;
+  @apply py-6 md:py-10 gap-5 md:gap-8 px-4;
 
   .avatar-wrapper {
-    @apply rounded-full bg-[var(--accent-lighter)] w-[170px] h-[170px] overflow-hidden flex items-center justify-center p-10;
+    @apply rounded-full bg-[var(--accent-lighter)] w-[120px] h-[120px] md:w-[170px] md:h-[170px] overflow-hidden flex items-center justify-center p-6 md:p-10;
 
     .avatar {
       @apply w-full h-full object-cover;
@@ -76,123 +77,157 @@ body {
   }
 
   .greetings {
-    @apply text-3xl font-semibold mb-5 tracking-[-0.05em];
+    @apply text-xl md:text-3xl font-semibold mb-3 md:mb-5 tracking-[-0.05em];
   }
 
   .headline {
-    @apply inline-flex flex-col text-7xl text-center font-black leading-[1.1] tracking-[-0.05em];
+    @apply inline-flex flex-col text-4xl sm:text-5xl md:text-7xl text-center font-black leading-[1.1] tracking-[-0.05em];
   }
 
   .description {
-    @apply text-xl w-[700px] font-light text-center opacity-75;
+    @apply text-lg md:text-xl w-full md:w-4/5 lg:w-[700px] font-light text-center opacity-75 px-4;
   }
 
   .cta {
-    @apply text-xl font-semibold tracking-[-0.05em] bg-[var(--foreground)] text-[var(--background)] px-6 py-3 rounded-full;
+    @apply text-base md:text-xl font-semibold tracking-[-0.05em] bg-[var(--foreground)] text-[var(--background)] px-5 py-2 md:px-6 md:py-3 rounded-full mt-2;
   }
 }
 
 .clients {
-  @apply py-10 my-10;
+  @apply py-6 md:py-10 my-5 md:my-10 px-4;
 
   .clients-list {
-    @apply flex flex-row flex-wrap justify-center items-center gap-10;
+    @apply flex flex-row flex-wrap justify-center items-center gap-6 md:gap-10;
 
     .client-item {
-      @apply flex flex-col items-center grayscale scale-90;
+      @apply flex flex-col items-center grayscale scale-75 sm:scale-80 md:scale-90;
     }
     span.client-logo {
-      @apply font-semibold text-2xl tracking-[-0.05em];
+      @apply font-semibold text-xl md:text-2xl tracking-[-0.05em];
     }
   }
 }
 
 .projects {
-  @apply py-10 my-10 container mx-auto;
+  @apply py-6 md:py-10 my-6 md:my-10 container mx-auto px-4;
 
   .projects-list {
-    @apply flex flex-col items-center justify-center px-16 w-[70%] mx-auto;
+    @apply flex flex-col items-center justify-center w-full sm:w-[85%] md:w-[80%] lg:w-[70%] mx-auto;
 
     .project-item {
-      @apply h-[100vh] flex flex-col justify-center items-center;
+      @apply min-h-screen py-16 sm:py-8 flex flex-col justify-center items-center;
     }
     .project-card-identity {
-      @apply flex gap-10;
+      @apply flex flex-col lg:flex-row gap-6 md:gap-10;
     }
     .project-card-image-wrapper {
-      @apply flex flex-col items-center flex-2/3;
+      @apply flex flex-col items-center w-full lg:w-2/3;
     }
     .project-card-image {
-      @apply w-full h-[400px] rounded-4xl object-cover;
+      @apply w-full h-[250px] sm:h-[300px] md:h-[400px] rounded-2xl md:rounded-4xl object-cover;
     }
     .project-card-identity-info {
-      @apply flex flex-col flex-1/3 pt-5;
+      @apply flex flex-col w-full lg:w-1/3 pt-3 md:pt-5;
     }
     .project-card-identity-title {
-      @apply font-bold text-3xl mb-3 tracking-[-0.05em];
+      @apply font-bold text-2xl md:text-3xl mb-2 md:mb-3 tracking-[-0.05em];
     }
     .project-card-identity-description {
-      @apply text-xl;
+      @apply text-base md:text-xl;
     }
     .project-card {
-      @apply flex flex-col gap-10;
+      @apply flex flex-col gap-6 md:gap-10;
     }
     .project-card-info {
-      @apply flex gap-10;
+      @apply flex flex-col lg:flex-row gap-6 md:gap-10;
     }
     .project-card-info-personal,
     .project-card-info-skills {
-      @apply flex-1/2;
+      @apply w-full lg:w-1/2;
     }
     .project-card-info-skills {
-      @apply self-end;
+      @apply self-center lg:self-end;
     }
     .project-card-info-personal {
-      @apply text-right;
+      @apply text-left lg:text-right;
     }
     .project-card-info-position {
-      @apply font-semibold text-3xl mb-3 tracking-[-0.05em];
+      @apply font-semibold text-2xl md:text-3xl mb-2 md:mb-3 tracking-[-0.05em];
     }
     .project-card-info-technologies {
-      @apply flex flex-row gap-5 mb-2;
+      @apply flex flex-row flex-wrap gap-3 md:gap-5 mb-2;
     }
     .project-card-info-technology {
-      @apply inline-flex flex-col items-center justify-center px-4 py-8 rounded-2xl bg-[var(--project-tech-icon-background)];
+      @apply inline-flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-8 rounded-xl md:rounded-2xl bg-[var(--project-tech-icon-background)];
     }
     .project-card-info-technology-icon {
-      @apply text-4xl mb-1;
+      @apply text-2xl md:text-4xl mb-1;
     }
     .project-card-info-technology-name {
-      @apply font-bold text-sm;
+      @apply font-bold text-xs md:text-sm;
     }
     .project-card-identity-description,
     .project-card-info-description {
-      @apply text-lg;
+      @apply text-base md:text-lg;
     }
     .project-card-identity-link {
-      @apply rounded-full inline-flex gap-2 px-6 py-3 bg-[var(--foreground)] text-[var(--background)] self-start mt-5;
+      @apply rounded-full inline-flex gap-2 px-4 py-2 md:px-6 md:py-3 bg-[var(--foreground)] text-[var(--background)] self-start mt-4 md:mt-5;
     }
     .project-card-identity-link-text {
-      @apply font-semibold;
+      @apply font-semibold text-sm md:text-base;
     }
   }
 }
 
 .skills {
-  @apply px-16 min-h-screen flex justify-center items-center;
+  @apply px-4 sm:px-8 md:px-12 lg:px-16 flex justify-center items-center py-10 md:py-16;
 
   .skills-grid {
+    @apply w-full grid gap-3 grid-cols-2 grid-rows-2 md:grid-cols-5 md:grid-rows-5 md:gap-8;
+
     .skill-item {
-      @apply relative overflow-hidden rounded-4xl p-8 flex flex-col items-start justify-end text-black;
+      @apply relative overflow-hidden rounded-xl md:rounded-2xl lg:rounded-4xl p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col items-start justify-end text-black;
     }
+
+    .skill-item:nth-child(1) {
+      @apply md:col-span-2 md:row-span-4;
+    }
+    .skill-item:nth-child(2) {
+      @apply md:col-start-1 md:row-start-5;
+    }
+    .skill-item:nth-child(3) {
+      @apply md:col-span-2 md:col-start-2 md:row-start-5;
+    }
+    .skill-item:nth-child(4) {
+      @apply md:row-span-2 md:col-start-3 md:row-start-1;
+    }
+    .skill-item:nth-child(5) {
+      @apply md:col-span-2 md:col-start-3 md:row-start-3;
+    }
+    .skill-item:nth-child(6) {
+      @apply md:col-start-3 md:row-start-4;
+    }
+    .skill-item:nth-child(7) {
+      @apply md:row-span-2 md:col-start-4 md:row-start-4;
+    }
+    .skill-item:nth-child(8) {
+      @apply md:col-span-2 md:col-start-4 md:row-start-1;
+    }
+    .skill-item:nth-child(9) {
+      @apply md:col-start-4 md:row-start-2;
+    }
+    .skill-item:nth-child(10) {
+      @apply md:row-span-4 md:col-start-5 md:row-start-2;
+    }
+
     .skill-item-icons {
-      @apply flex flex-row gap-6;
+      @apply flex flex-row flex-wrap gap-2 sm:gap-3 md:gap-4 lg:gap-6;
     }
     .skill-item-icons i {
-      @apply text-4xl;
+      @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
     }
     .skill-item-text {
-      @apply font-bold text-lg mt-3 tracking-[-0.05em];
+      @apply font-bold text-xs sm:text-sm md:text-base lg:text-lg mt-1 sm:mt-2 md:mt-3 tracking-[-0.05em] break-words;
     }
 
     .skill-item::before {
@@ -204,103 +239,187 @@ body {
     .skill-item:nth-child(1)::before {
       background-image: url("/images/brushes/1.svg");
       background-position: top left 10%;
-      background-size: 350%;
+      background-size: 200%;
+
+      @media (min-width: 640px) {
+        background-size: 250%;
+      }
+
+      @media (min-width: 768px) {
+        background-size: 300%;
+      }
+
+      @media (min-width: 1024px) {
+        background-size: 350%;
+      }
     }
     .skill-item:nth-child(2)::before {
       background-image: url("/images/brushes/2.svg");
       background-position: center;
-      background-size: 300%;
+      background-size: 200%;
       opacity: 0.15;
+
+      @media (min-width: 768px) {
+        background-size: 250%;
+      }
+
+      @media (min-width: 1024px) {
+        background-size: 300%;
+      }
     }
     .skill-item:nth-child(3)::before {
       background-image: url("/images/brushes/3.svg");
       background-position: center;
-      background-size: 100%;
+      background-size: 80%;
       opacity: 0.15;
+
+      @media (min-width: 768px) {
+        background-size: 90%;
+      }
+
+      @media (min-width: 1024px) {
+        background-size: 100%;
+      }
     }
     .skill-item:nth-child(4)::before {
       background-image: url("/images/brushes/4.svg");
       background-position: center;
-      background-size: 200%;
+      background-size: 120%;
       opacity: 0.15;
+
+      @media (min-width: 768px) {
+        background-size: 150%;
+      }
+
+      @media (min-width: 1024px) {
+        background-size: 200%;
+      }
     }
     .skill-item:nth-child(5)::before {
       background-image: url("/images/brushes/5.svg");
       background-position: center;
-      background-size: 250%;
+      background-size: 180%;
       opacity: 0.05;
+
+      @media (min-width: 768px) {
+        background-size: 200%;
+      }
+
+      @media (min-width: 1024px) {
+        background-size: 250%;
+      }
     }
     .skill-item:nth-child(6)::before {
       background-image: url("/images/brushes/6.svg");
       background-position: center;
-      background-size: 250%;
+      background-size: 180%;
       opacity: 0.1;
+
+      @media (min-width: 768px) {
+        background-size: 200%;
+      }
+
+      @media (min-width: 1024px) {
+        background-size: 250%;
+      }
     }
     .skill-item:nth-child(7)::before {
       background-image: url("/images/brushes/7.svg");
       background-position: center;
-      background-size: 250%;
+      background-size: 180%;
       opacity: 0.15;
+
+      @media (min-width: 768px) {
+        background-size: 200%;
+      }
+
+      @media (min-width: 1024px) {
+        background-size: 250%;
+      }
     }
     .skill-item:nth-child(8)::before {
       background-image: url("/images/brushes/8.svg");
       background-position: center;
-      background-size: 250%;
+      background-size: 180%;
       opacity: 0.15;
+
+      @media (min-width: 768px) {
+        background-size: 200%;
+      }
+
+      @media (min-width: 1024px) {
+        background-size: 250%;
+      }
     }
     .skill-item:nth-child(9)::before {
       background-image: url("/images/brushes/9.svg");
       background-position: center;
-      background-size: 250%;
+      background-size: 180%;
       opacity: 0.15;
+
+      @media (min-width: 768px) {
+        background-size: 200%;
+      }
+
+      @media (min-width: 1024px) {
+        background-size: 250%;
+      }
     }
     .skill-item:nth-child(10)::before {
       background-image: url("/images/brushes/10.svg");
       background-position: top left;
-      background-size: 500%;
+      background-size: 300%;
       opacity: 0.15;
+
+      @media (min-width: 768px) {
+        background-size: 400%;
+      }
+
+      @media (min-width: 1024px) {
+        background-size: 500%;
+      }
     }
   }
 }
 
 .contact {
-  @apply min-h-screen flex flex-col justify-center items-center;
+  @apply min-h-screen flex flex-col justify-center items-center px-4 py-16 md:py-0;
 
   .contact-content {
-    @apply flex flex-row gap-16;
+    @apply flex flex-col md:flex-row gap-8 md:gap-16 w-full max-w-6xl justify-self-center;
   }
   .contact-content-left,
   .contact-form {
-    @apply flex-1/2;
+    @apply w-full md:w-1/2;
   }
   .contact-content-left {
-    @apply rounded-4xl overflow-hidden flex flex-col items-end justify-end p-10 pt-16;
+    @apply rounded-2xl md:rounded-4xl overflow-hidden flex flex-col items-center md:items-end justify-center md:justify-end p-6 md:p-10 pt-10 md:pt-16;
   }
   .contact-content-left-icon {
-    @apply rounded-full bg-[var(--accent-lighter)] w-[175px] h-[175px] overflow-hidden flex items-center justify-center mb-5 mt-28;
+    @apply rounded-full bg-[var(--accent-lighter)] w-[120px] h-[120px] md:w-[175px] md:h-[175px] overflow-hidden flex items-center justify-center mb-4 md:mb-5 mt-0 md:mt-28;
 
     .contact-content-left-image {
       @apply w-full h-full object-cover;
     }
   }
   .contact-content-left-title {
-    @apply inline-flex flex-col text-5xl text-right font-black leading-[1.1] tracking-[-0.05em] mb-3;
+    @apply inline-flex flex-col text-3xl sm:text-4xl md:text-5xl text-center md:text-right font-black leading-[1.1] tracking-[-0.05em] mb-2 md:mb-3;
   }
   .contact-content-left-description {
-    @apply inline-flex flex-col text-xl w-[700px] text-right;
+    @apply inline-flex flex-col text-base sm:text-lg md:text-xl w-full md:w-auto text-center md:text-right;
   }
   .contact-socials {
-    @apply flex flex-row gap-3 mt-10;
+    @apply flex flex-row gap-3 mt-6 md:mt-10 justify-center md:justify-end;
   }
   .contact-social-link {
-    @apply bg-[var(--accent-lighter)] rounded-full w-[50px] h-[50px] overflow-hidden flex items-center justify-center;
+    @apply bg-[var(--accent-lighter)] rounded-full w-[40px] h-[40px] md:w-[50px] md:h-[50px] overflow-hidden flex items-center justify-center;
   }
 
   .contact-form {
-    @apply flex flex-col justify-center gap-5;
+    @apply flex flex-col justify-center gap-4 md:gap-5 mt-8 md:mt-0;
   }
   .contact-form-label {
-    @apply flex flex-col w-[60%];
+    @apply flex flex-col w-full;
     @apply font-semibold;
 
     span {
@@ -308,60 +427,73 @@ body {
     }
   }
   .contact-form-input {
-    @apply rounded-2xl border border-gray-200 p-4;
+    @apply rounded-xl md:rounded-2xl border border-gray-200 p-3 md:p-4;
   }
   .contact-form-button {
-    @apply flex gap-2 items-center justify-center self-start text-xl font-semibold tracking-[-0.05em] bg-[var(--foreground)] text-[var(--background)] px-6 py-3 rounded-full;
-    @apply mt-4;
+    @apply flex gap-2 items-center justify-center self-start text-base md:text-xl font-semibold tracking-[-0.05em] bg-[var(--foreground)] text-[var(--background)] px-4 py-2 md:px-6 md:py-3 rounded-full;
+    @apply mt-2 md:mt-4;
   }
 }
 
 .with-ai {
-  @apply relative overflow-hidden min-h-screen flex flex-col justify-center items-center bg-[var(--background)] grayscale;
+  @apply relative overflow-hidden min-h-screen flex flex-col justify-center items-center bg-[var(--background)] grayscale px-4;
 
   background-repeat: no-repeat;
   background-image: url("/images/with-ai.png");
-  background-position: center right 20%;
-  background-size: contain;
+  background-position: center right -67vw;
+  background-size: cover;
+
+  @media (min-width: 768px) {
+    background-position: center right 20%;
+    background-size: contain;
+  }
 
   &:before {
     content: "";
     @apply absolute z-0 top-0 left-0 w-full;
 
-    box-shadow: 0 0 100px 150px var(--background);
+    box-shadow: 0 0 50px 100px var(--background);
+
+    @media (min-width: 768px) {
+      box-shadow: 0 0 100px 150px var(--background);
+    }
   }
   &:after {
     content: "";
     @apply absolute z-0 bottom-0 left-0 w-full;
 
-    box-shadow: 0 0 50px 100px var(--background);
+    box-shadow: 0 0 25px 75px var(--background);
+
+    @media (min-width: 768px) {
+      box-shadow: 0 0 50px 100px var(--background);
+    }
   }
   .with-ai-content {
-    @apply flex relative flex-col gap-5 w-[70%] mx-auto py-10;
+    @apply flex relative flex-col gap-3 md:gap-5 w-full sm:w-[85%] md:w-[80%] lg:w-[70%] mx-auto py-6 md:py-10;
   }
   .with-ai-title {
-    @apply flex flex-col text-5xl font-black leading-[1.1] tracking-[-0.05em];
+    @apply flex flex-col text-3xl sm:text-4xl md:text-5xl font-black leading-[1.1] tracking-[-0.05em];
 
     span {
       @apply inline-flex items-center gap-2;
     }
   }
   .with-ai-description {
-    @apply text-xl flex flex-col mb-5;
+    @apply text-base sm:text-lg md:text-xl flex flex-col mb-4 md:mb-5;
   }
   .with-ai-button {
-    @apply inline-flex justify-center items-center w-fit gap-2 text-xl font-semibold tracking-[-0.05em] bg-[var(--foreground)] text-[var(--background)] px-6 py-3 rounded-full;
+    @apply inline-flex justify-center items-center w-fit gap-2 text-base sm:text-lg md:text-xl font-semibold tracking-[-0.05em] bg-[var(--foreground)] text-[var(--background)] px-4 py-2 md:px-6 md:py-3 rounded-full;
   }
 }
 
 .footer {
-  @apply w-full py-8 mt-10;
-  @apply flex justify-center items-center;
+  @apply w-full py-6 md:py-8 mt-6 md:mt-10;
+  @apply flex justify-center items-center px-4;
 
   .footer-content {
     @apply flex flex-row items-center justify-center;
   }
   .footer-text {
-    @apply text-base font-medium tracking-[-0.05em];
+    @apply text-sm md:text-base font-medium tracking-[-0.05em] text-center;
   }
 }

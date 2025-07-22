@@ -291,73 +291,73 @@ export default function Home() {
             <img
               src="/images/clients/attineos.svg"
               alt="Attineos"
-              className="client-logo w-[150px]"
+              className="client-logo w-[100px] sm:w-[120px] md:w-[150px]"
             />
           </li>
           <li className="client-item">
             <img
               src="/images/clients/mailjet.svg"
               alt="Mailjet"
-              className="client-logo w-[120px]"
+              className="client-logo w-[90px] sm:w-[100px] md:w-[120px]"
             />
           </li>
           <li className="client-item">
             <img
               src="/images/clients/wino.svg"
               alt="Wino"
-              className="client-logo w-[100px]"
+              className="client-logo w-[80px] sm:w-[90px] md:w-[100px]"
             />
           </li>
           <li className="client-item">
             <img
               src="/images/clients/talenz.svg"
               alt="Talenz"
-              className="client-logo w-[100px]"
+              className="client-logo w-[80px] sm:w-[90px] md:w-[100px]"
             />
           </li>
           <li className="client-item">
             <img
               src="/images/clients/liebherr.svg"
               alt="Liebherr"
-              className="client-logo w-[120px]"
+              className="client-logo w-[90px] sm:w-[100px] md:w-[120px]"
             />
           </li>
           <li className="client-item">
             <img
               src="/images/clients/ushuaia.png"
               alt="Ushuaia Beauté"
-              className="client-logo w-[85px]"
+              className="client-logo w-[70px] sm:w-[75px] md:w-[85px]"
             />
           </li>
           <li className="client-item">
-            <span className="client-logo">YokoSushi</span>
+            <span className="client-logo text-xl sm:text-2xl">YokoSushi</span>
           </li>
           <li className="client-item">
             <img
               src="/images/clients/goal.png"
               alt="Game of Life"
-              className="client-logo w-[90px]"
+              className="client-logo w-[70px] sm:w-[80px] md:w-[90px]"
             />
           </li>
           <li className="client-item">
             <img
               src="/images/clients/jev.png"
               alt="Jeunesse et vie"
-              className="client-logo w-[80px]"
+              className="client-logo w-[60px] sm:w-[70px] md:w-[80px]"
             />
           </li>
           <li className="client-item">
             <img
               src="/images/clients/ztf.png"
               alt="Zacharias Tanee Fomum"
-              className="client-logo w-[90px]"
+              className="client-logo w-[70px] sm:w-[80px] md:w-[90px]"
             />
           </li>
           <li className="client-item">
             <img
               src="/images/clients/cmci-paris.png"
               alt="CMCI Paris"
-              className="client-logo w-[100px]"
+              className="client-logo w-[80px] sm:w-[90px] md:w-[100px]"
             />
           </li>
         </ul>
@@ -433,8 +433,8 @@ export default function Home() {
       </section>
 
       <section className="skills">
-        <div className="grid grid-cols-2 grid-rows-2 gap-8 skills-grid">
-          <div className="skill-item bg-red-400 col-span-2 row-span-4">
+        <div className="skills-grid">
+          <div className="skill-item bg-red-400">
             <div className="skill-item-icons">
               <i className="devicon-react-original"></i>
               <i className="devicon-redux-original"></i>
@@ -442,14 +442,14 @@ export default function Home() {
             </div>
             <span className="skill-item-text">ReactJS, ReScript, OCaml</span>
           </div>
-          <div className="skill-item bg-pink-300 col-start-1 row-start-5">
+          <div className="skill-item bg-pink-300">
             <div className="skill-item-icons">
               <i className="devicon-express-original"></i>
               <i className="devicon-graphql-plain"></i>
             </div>
             <span className="skill-item-text">REST API, GraphQL</span>
           </div>
-          <div className="skill-item bg-green-400 col-span-2 col-start-2 row-start-5">
+          <div className="skill-item bg-green-400">
             <div className="skill-item-icons">
               <i className="devicon-docker-plain"></i>
               <i className="devicon-githubactions-plain"></i>
@@ -459,7 +459,7 @@ export default function Home() {
               Docker, Github Actions, Jest
             </span>
           </div>
-          <div className="skill-item bg-violet-300 row-span-2 col-start-3 row-start-1">
+          <div className="skill-item bg-violet-300">
             <div className="skill-item-icons">
               <i className="devicon-php-plain"></i>
               <i className="devicon-zend-plain"></i>
@@ -469,20 +469,20 @@ export default function Home() {
               PHP, Zend Framework, WordPress
             </span>
           </div>
-          <div className="skill-item bg-teal-500 col-span-2 col-start-3 row-start-3">
+          <div className="skill-item bg-teal-500">
             <div className="skill-item-icons">
               <i className="devicon-vuejs-plain"></i>
               <i className="devicon-nuxtjs-plain"></i>
             </div>
             <span className="skill-item-text">VueJS, NuxtJS</span>
           </div>
-          <div className="skill-item bg-amber-400 col-start-3 row-start-4">
+          <div className="skill-item bg-amber-400">
             <div className="skill-item-icons">
               <i className="devicon-sentry-plain"></i>
             </div>
             <span className="skill-item-text">Sentry, Zod, ReactQuery, Nx</span>
           </div>
-          <div className="skill-item bg-orange-400 row-span-2 col-start-4 row-start-4">
+          <div className="skill-item bg-orange-400">
             <div className="skill-item-icons">
               <i className="devicon-nodejs-plain"></i>
               <i className="devicon-nextjs-plain"></i>
@@ -490,7 +490,7 @@ export default function Home() {
             </div>
             <span className="skill-item-text">NodeJS, NextJS, Prisma</span>
           </div>
-          <div className="skill-item bg-fuchsia-300 col-span-2 col-start-4 row-start-1">
+          <div className="skill-item bg-fuchsia-300">
             <div className="skill-item-icons">
               <i className="devicon-figma-plain"></i>
               <i className="devicon-storybook-plain"></i>
@@ -500,13 +500,18 @@ export default function Home() {
               UX/UI Design, Storybook, TailwindCSS
             </span>
           </div>
-          <div className="skill-item bg-orange-300 col-start-4 row-start-2">
+          <div className="skill-item bg-orange-300">
             <div className="skill-item-icons">
-              <HugeiconsIcon icon={AiBrain03Icon} size={38} strokeWidth={1.5} />
+              <HugeiconsIcon
+                icon={AiBrain03Icon}
+                size={30}
+                strokeWidth={1.5}
+                className="sm:size-[38px]"
+              />
             </div>
             <span className="skill-item-text">OpenAI, Ollama, RAG</span>
           </div>
-          <div className="skill-item bg-blue-300 row-span-4 col-start-5 row-start-2">
+          <div className="skill-item bg-blue-300">
             <div className="skill-item-icons">
               <i className="devicon-typescript-plain"></i>
               <i className="devicon-javascript-plain"></i>
