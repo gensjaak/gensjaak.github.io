@@ -34,11 +34,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${bricolageGrotesque.variable} antialiased`}>
         <header className="header">
-          <a href="mailto:hi@jeanjacques.dev" className="logo">
+          <a href="mailto:gensjaak@gmail.com" className="logo">
             <span className="logo-icon-wrapper">
               <HugeiconsIcon icon={MailOpenIcon} size={22} strokeWidth={1.5} />
             </span>
-            <span className="logo-text">hi@jeanjacques.dev</span>
+            <span className="logo-text">gensjaak@gmail.com</span>
           </a>
 
           <nav className="navigation">

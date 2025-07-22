@@ -2,12 +2,12 @@
 import {
   AiBeautifyIcon,
   CircleArrowUpRightIcon,
-  Sent02Icon,
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { AiBrain03Icon } from "@hugeicons/core-free-icons";
 import Link from "next/link";
 import { TProject } from "../constants/types";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   const projects: TProject[] = [
@@ -574,7 +574,7 @@ export default function Home() {
               <ul className="contact-socials">
                 <li className="contact-social-item">
                   <a
-                    href="mailto:hi@jeanjacques.dev"
+                    href="mailto:gensjaak@gmail.com"
                     className="contact-social-link"
                   >
                     <img
@@ -617,28 +617,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <form className="contact-form">
-              <label htmlFor="name" className="contact-form-label">
-                <span>Name</span>
-                <input type="text" id="name" className="contact-form-input" />
-              </label>
-              <label htmlFor="email" className="contact-form-label">
-                <span>Email</span>
-                <input type="email" id="email" className="contact-form-input" />
-              </label>
-              <label htmlFor="message" className="contact-form-label">
-                <span>Message</span>
-                <textarea
-                  id="message"
-                  className="contact-form-input"
-                  rows={7}
-                />
-              </label>
-              <button type="submit" className="contact-form-button">
-                Send message{" "}
-                <HugeiconsIcon icon={Sent02Icon} size={22} strokeWidth={2} />
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </section>
