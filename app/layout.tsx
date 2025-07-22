@@ -34,49 +34,51 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${bricolageGrotesque.variable} antialiased`}>
         <header className="header">
-          <a href="mailto:gensjaak@gmail.com" className="logo">
-            <span className="logo-icon-wrapper">
-              <HugeiconsIcon icon={MailOpenIcon} size={22} strokeWidth={1.5} />
-            </span>
-            <span className="logo-text">gensjaak@gmail.com</span>
-          </a>
+          <div className="header-inner container mx-auto">
+            <a href="mailto:gensjaak@gmail.com" className="logo">
+              <span className="logo-icon-wrapper">
+                <HugeiconsIcon icon={MailOpenIcon} size={22} strokeWidth={1.5} />
+              </span>
+              <span className="logo-text">gensjaak@gmail.com</span>
+            </a>
 
-          <nav className="navigation">
-            <ul className="navigation-list">
-              <li className="navigation-list-item">
-                <Link className="navigation-link" href="#works">
-                  Works
-                </Link>
-              </li>
-              <li className="navigation-list-item">
-                <Link className="navigation-link" href="#expertises">
-                  Expertises
-                </Link>
-              </li>
-              <li className="navigation-list-item">
-                <Link className="navigation-link" href="#contact">
-                  Contact
-                </Link>
-              </li>
-              <li className="navigation-list-item">
-                <Link
-                  className="navigation-link build-with-ai"
-                  href="#build-with-ai"
-                >
-                  <HugeiconsIcon
-                    icon={AiBeautifyIcon}
-                    size={18}
-                    className="md:size-[22px]"
-                    strokeWidth={1.5}
-                  />
-                  <span className="hidden md:inline">
-                    Let&apos;s build with AI
-                  </span>
-                  <span className="inline md:hidden">Go with AI</span>
-                </Link>
-              </li>
-            </ul>
-          </nav>
+            <nav className="navigation">
+              <ul className="navigation-list">
+                <li className="navigation-list-item">
+                  <Link className="navigation-link" href="#works" scroll={true}>
+                    Works
+                  </Link>
+                </li>
+                <li className="navigation-list-item">
+                  <Link className="navigation-link" href="#expertises">
+                    Expertises
+                  </Link>
+                </li>
+                <li className="navigation-list-item">
+                  <Link className="navigation-link" href="#contact">
+                    Contact
+                  </Link>
+                </li>
+                <li className="navigation-list-item">
+                  <Link
+                    className="navigation-link build-with-ai"
+                    href="#build-with-ai"
+                  >
+                    <HugeiconsIcon
+                      icon={AiBeautifyIcon}
+                      size={18}
+                      className="md:size-[22px]"
+                      strokeWidth={1.5}
+                    />
+                    <span className="hidden md:inline">
+                      Let&apos;s build with AI
+                    </span>
+                    <span className="inline md:hidden">Go with AI</span>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </header>
         <main>{children}</main>
         <footer className="footer">
