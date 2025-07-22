@@ -34,32 +34,35 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${bricolageGrotesque.variable} antialiased`}>
         <header className="header">
-          <Link href="/" className="logo">
+          <a href="mailto:hi@jeanjacques.dev" className="logo">
             <span className="logo-icon-wrapper">
               <HugeiconsIcon icon={MailOpenIcon} size={22} strokeWidth={1.5} />
             </span>
             <span className="logo-text">hi@jeanjacques.dev</span>
-          </Link>
+          </a>
 
           <nav className="navigation">
             <ul className="navigation-list">
               <li className="navigation-list-item">
-                <Link className="navigation-link" href="/">
+                <Link className="navigation-link" href="#works">
                   Works
                 </Link>
               </li>
               <li className="navigation-list-item">
-                <Link className="navigation-link" href="/">
+                <Link className="navigation-link" href="#expertises">
                   Expertises
                 </Link>
               </li>
               <li className="navigation-list-item">
-                <Link className="navigation-link" href="/">
+                <Link className="navigation-link" href="#contact">
                   Contact
                 </Link>
               </li>
               <li className="navigation-list-item">
-                <Link className="navigation-link build-with-ai" href="/">
+                <Link
+                  className="navigation-link build-with-ai"
+                  href="#build-with-ai"
+                >
                   <HugeiconsIcon
                     icon={AiBeautifyIcon}
                     size={18}

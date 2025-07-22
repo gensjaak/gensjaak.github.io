@@ -269,8 +269,8 @@ export default function Home() {
         </div>
         <h6 className="greetings">Hi, I&apos;m Jean-Jacques 👋</h6>
         <h1 className="headline">
-          <span>Building digital</span>
-          <span>products, brands and</span>
+          <span>Crafting intuitive,</span>
+          <span>high-impact user</span>
           <span>experiences.</span>
         </h1>
         <p className="description">
@@ -279,7 +279,7 @@ export default function Home() {
           creating high-performance, intuitive interfaces, while working with
           the product and design teams.
         </p>
-        <Link href="/contact" className="cta">
+        <Link href="#contact" className="cta">
           Connect with me
           <span className="ml-2">📬</span>
         </Link>
@@ -363,7 +363,7 @@ export default function Home() {
         </ul>
       </section>
 
-      <section className="projects">
+      <section className="projects" id="works">
         <ul className="projects-list">
           {projects.map((project, index) => (
             <li key={index} className="project-item">
@@ -414,6 +414,8 @@ export default function Home() {
                     <a
                       href={project.identity.link.href}
                       className="project-card-identity-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <span className="project-card-identity-link-text">
                         {project.identity.link.text}
@@ -432,7 +434,7 @@ export default function Home() {
         </ul>
       </section>
 
-      <section className="skills">
+      <section className="skills" id="expertises">
         <div className="skills-grid">
           <div className="skill-item bg-red-400">
             <div className="skill-item-icons">
@@ -521,7 +523,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="with-ai">
+      <section className="with-ai" id="build-with-ai">
         <div className="container mx-auto">
           <div className="with-ai-content">
             <h2 className="with-ai-title">
@@ -543,12 +545,14 @@ export default function Home() {
               <span>Focus on your creativity and passion</span>
               <span>while AI handles the heavy lifting.</span>
             </p>
-            <button className="with-ai-button">I have an idea</button>
+            <Link href="#contact" className="with-ai-button">
+              I have an idea
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="contact">
+      <section className="contact" id="contact">
         <div className="container mx-auto">
           <div className="contact-content">
             <div className="contact-content-left">
